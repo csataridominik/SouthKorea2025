@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 import math
 from PIL import Image, ImageDraw
 
+
+for i in range(4):
+    print('szia Doma!')
+
 def get_angle_with_Hough(original_image,line_threshold = 100):
     original_image_norm = cv2.normalize(original_image, None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
 
@@ -11,10 +15,6 @@ def get_angle_with_Hough(original_image,line_threshold = 100):
 
     # Step 3: Detect lines using Hough Transform
     lines = cv2.HoughLines(edges, 1, np.pi / 180, threshold = line_threshold )
-
-    # Plot results
-
-
 
     # Draw detected lines on the edge-detected image
     edge_with_lines = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)  # Convert to BGR for color lines
